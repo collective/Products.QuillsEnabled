@@ -1,0 +1,72 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+           xmlns:five="http://namespaces.zope.org/five">
+
+  <include package=".browser" />
+  <include package="quills.app"/>
+
+  <five:implements
+      class="Products.Archetypes.atapi.BaseFolder"
+      interface="quills.core.interfaces.IPossibleWeblog" />
+
+  <adapter
+      for="quills.core.interfaces.IWeblogEnhanced
+           zope.publisher.interfaces.http.IHTTPRequest"
+      provides="zope.publisher.interfaces.IPublishTraverse"
+      factory="quills.app.traversal.WeblogTraverser" />
+
+  <adapter
+      for="Products.Archetypes.interfaces.IBaseFolder"
+      provides="quills.core.interfaces.IWeblog"
+      factory=".adapters.folder.Folder2Weblog" />
+
+  <adapter
+      for="Products.ATContentTypes.interface.IATDocument"
+      provides="quills.core.interfaces.IWeblogEntry"
+      factory=".adapters.document.Document2WeblogEntry" />
+
+  <five:implements
+      class="Products.ATContentTypes.content.document.ATDocument"
+      interface="quills.core.interfaces.IPossibleWeblogEntry" />
+
+  <adapter
+      for="Products.Archetypes.interfaces.IBaseFolder"
+      provides="quills.app.interfaces.IWeblogEnhancedConfiguration"
+      factory=".browser.weblogconfig.WeblogEnhancedConfig" />
+
+  <adapter
+      for="quills.core.interfaces.IPossibleWeblogEntry"
+      provides="quills.core.interfaces.IWeblogLocator"
+      factory="quills.app.locator.RecursingUpLocator"
+      />
+
+  <adapter
+      for="quills.core.interfaces.IWeblogEnhanced"
+      provides="quills.core.interfaces.IWeblogLocator"
+      factory="quills.app.locator.RecursingUpLocator"
+      />
+
+  <adapter
+      for="quills.core.interfaces.IBaseContent"
+      provides="quills.core.interfaces.IWeblogLocator"
+      factory="quills.app.locator.RecursingUpLocator"
+      />
+
+  <subscriber
+      for="quills.core.interfaces.IPossibleWeblog
+	       .activation.IWeblogActivationEvent"
+      handler=".activation.updateIndexes"
+      />
+
+  <!-- profiles -->
+  <genericsetup:registerProfile
+      name="default"
+      title="Products.QuillsEnabled"
+      directory="profiles/default"
+      description="Extension profile for the QuillsEnabled product."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      />
+
+</configure>

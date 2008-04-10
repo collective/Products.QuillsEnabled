@@ -1,0 +1,56 @@
+<configure xmlns="http://namespaces.zope.org/browser">
+
+  <configure package="quills.app">
+
+      <page
+          for="quills.core.interfaces.IWeblogEnhanced"
+          class="Products.QuillsEnabled.browser.weblogview.WeblogView"
+          template="browser/weblog_view.pt"
+          permission="zope2.View"
+          name="weblog_view"
+          allowed_interface="quills.core.browser.interfaces.IWeblogView" />
+
+      <defaultView
+          for="quills.core.interfaces.IWeblogEnhanced"
+          name="weblog_view" />
+
+      <page
+          for="quills.core.interfaces.IPossibleWeblogEntry"
+          class="Products.QuillsEnabled.browser.weblogview.WeblogEntryView"
+          template="browser/weblogentry_view.pt"
+          permission="zope2.View"
+          name="weblogentry_view"
+          allowed_interface="quills.core.browser.interfaces.IWeblogEntryView" />
+
+      <page
+          for="quills.core.interfaces.IWeblogEnhanced"
+          template="browser/manage_comments.pt"
+          permission="zope2.View"
+          class="quills.app.browser.commentViews.ManageCommentsView"
+          name="manage_comments" />
+
+      <page
+          for="quills.core.interfaces.IWeblogEnhanced"
+          name="config_view"
+          class="Products.QuillsEnabled.browser.weblogconfig.WeblogEnhancedConfigEditForm"
+          permission="zope2.ChangeConfig"
+          />
+
+      <page
+          for="*"
+          name="blogactivation"
+          class="Products.QuillsEnabled.browser.activation.BlogActivation"
+          allowed_attributes="can_activate can_deactivate"
+          permission="zope.Public"
+          />
+
+      <page
+          for="*"
+          name="blogtoggle"
+          class="Products.QuillsEnabled.browser.activation.Toggle"
+          permission="cmf.ModifyPortalContent"
+          />
+          
+  </configure>
+
+</configure>
