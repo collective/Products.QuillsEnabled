@@ -1,0 +1,9 @@
+Changelog for Products.QuillsEnabled
+
+    (name of developer listed in brackets)
+
+Products.QuillsEnabled - svn/1.7-dev Unreleased
+
+    - Initial package structure.
+      [zopeskel]
+
