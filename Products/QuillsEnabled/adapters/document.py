@@ -26,7 +26,7 @@ class Document2WeblogEntry(QuillsMixin):
     implements(IWorkflowedWeblogEntry)
 
     # XXX Awful hack!
-    __allow_access_to_unprotected_subobjects__ = True
+    #__allow_access_to_unprotected_subobjects__ = True
 
     def __init__(self, context):
         self.context = context
