@@ -1,0 +1,70 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:five="http://namespaces.zope.org/five">
+
+  <adapter
+      for="quills.core.interfaces.IWeblogEntry"
+      provides="Products.basesyndication.interfaces.IFeedEntry"
+      factory=".syndication.WeblogEntryFeedEntry" /> 
+
+  <adapter
+      for="quills.core.interfaces.IWeblogEntry"
+      provides="Products.basesyndication.interfaces.IFeedSource"
+      factory=".syndication.WeblogEntryFeedSource" /> 
+
+  <adapter
+      for="quills.core.interfaces.IWeblogEntry"
+      provides="Products.basesyndication.interfaces.IFeed"
+      factory=".syndication.WeblogEntryFeed" /> 
+
+  <adapter
+      for="quills.core.interfaces.IWeblog"
+      provides="Products.basesyndication.interfaces.IFeedSource"
+      factory=".syndication.WeblogFeedSource" /> 
+
+  <adapter
+      for="quills.core.interfaces.IWeblog"
+      provides="Products.basesyndication.interfaces.IFeed"
+      factory=".syndication.WeblogFeed" /> 
+
+  <adapter
+      for="quills.core.interfaces.ITopic"
+      provides="Products.basesyndication.interfaces.IFeed"
+      factory=".syndication.TopicFeed" /> 
+
+  <adapter
+      for="quills.core.interfaces.ITopic"
+      provides="Products.basesyndication.interfaces.IFeedSource"
+      factory=".syndication.TopicFeedSource" /> 
+
+  <browser:pages
+      for="quills.core.interfaces.IWeblog"
+      class="Products.fatsyndication.browser.feed.GenericFeedView"
+      permission="zope2.View">
+    <browser:page attribute="atom"  name="atom.xml" />
+    <browser:page attribute="rdf"   name="feed.rdf" />
+    <browser:page attribute="rdf11" name="feed11.rdf" />
+    <browser:page attribute="rss"   name="rss.xml" />
+  </browser:pages>
+
+  <browser:pages
+      for="quills.core.interfaces.ITopic"
+      class="Products.fatsyndication.browser.feed.GenericFeedView"
+      permission="zope2.View">
+    <browser:page attribute="atom"  name="atom.xml" />
+    <browser:page attribute="rdf"   name="feed.rdf" />
+    <browser:page attribute="rdf11" name="feed11.rdf" />
+    <browser:page attribute="rss"   name="rss.xml" />
+  </browser:pages>
+
+  <browser:pages
+      for="quills.core.interfaces.IWeblogEntry"
+      class="Products.fatsyndication.browser.feed.GenericFeedView"
+      permission="zope2.View">
+    <browser:page attribute="atom"  name="atom.xml" />
+    <browser:page attribute="rdf"   name="feed.rdf" />
+    <browser:page attribute="rdf11" name="feed11.rdf" />
+    <browser:page attribute="rss"   name="rss.xml" />
+  </browser:pages>
+
+</configure>
