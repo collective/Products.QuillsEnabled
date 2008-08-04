@@ -26,6 +26,9 @@ QuillsEnabled is an Enterprise Weblog System for the Plone content management sy
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'quills.app',
+          'Products.basesyndication',
+          'Products.fatsyndication',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
