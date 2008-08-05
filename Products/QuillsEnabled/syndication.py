@@ -8,13 +8,12 @@ from DateTime.DateTime import DateTime
 # CMF imports
 from Products.CMFCore.utils import getToolByName
 
-# fatsyndication imports
 from Products.fatsyndication.adapters import BaseFeed
 from Products.fatsyndication.adapters import BaseFeedSource
 from Products.fatsyndication.adapters import BaseFeedEntry
 from Products.basesyndication.interfaces import IFeedSource
 from Products.basesyndication.interfaces import IFeedEntry
-
+from quills.core.interfaces import IWeblog, IWeblogEntry
 
 class WeblogFeed(BaseFeed):
     """Adapter from Quills Weblog instances to IFeed
@@ -48,6 +47,8 @@ class WeblogFeedSource(BaseFeedSource):
     """
 
     implements(IFeedSource)
+    def __init__(self, context):
+        self.context = IWeblog(context)
 
     def getFeedEntries(self, max_only=True):
         """See IFeedSoure
@@ -73,6 +74,8 @@ class TopicFeedSource(BaseFeedSource):
     """
 
     implements(IFeedSource)
+    def __init__(self, context):
+        self.context = IWeblog(context)
 
     def getFeedEntries(self):
         """See IFeedSoure
@@ -106,7 +109,9 @@ class WeblogEntryFeedEntry(BaseFeedEntry):
     """
 
     implements(IFeedEntry)
-
+    def __init__(self, context):
+        self.context = IWeblogEntry(context)
+    
     def getXhtml(self):
         html_types = ('text/html', 'text/x-rst',
                       'text/restructured', 'text/structured')

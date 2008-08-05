@@ -5,10 +5,11 @@
 
   <include package=".browser" />
   <include package="quills.app"/>
+  <include file="syndication.zcml" />
 
-  <five:implements
-      class="Products.Archetypes.atapi.BaseFolder"
-      interface="quills.core.interfaces.IPossibleWeblog" />
+  <class class="Products.Archetypes.atapi.BaseFolder">
+      <implements interface="quills.core.interfaces.IPossibleWeblog" />
+  </class>
 
   <adapter
       for="quills.core.interfaces.IWeblogEnhanced
@@ -26,9 +27,9 @@
       provides="quills.core.interfaces.IWeblogEntry"
       factory=".adapters.document.Document2WeblogEntry" />
 
-  <five:implements
-      class="Products.ATContentTypes.content.document.ATDocument"
-      interface="quills.core.interfaces.IPossibleWeblogEntry" />
+  <class class="Products.ATContentTypes.content.document.ATDocument">
+       <implements interface="quills.core.interfaces.IPossibleWeblogEntry" />
+  </class>
 
   <adapter
       for="Products.Archetypes.interfaces.IBaseFolder"

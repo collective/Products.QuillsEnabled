@@ -3,27 +3,17 @@
            xmlns:five="http://namespaces.zope.org/five">
 
   <adapter
-      for="quills.core.interfaces.IWeblogEntry"
+      for="Products.ATContentTypes.interface.IATDocument"
       provides="Products.basesyndication.interfaces.IFeedEntry"
-      factory=".syndication.WeblogEntryFeedEntry" /> 
+      factory="Products.fatsyndication.adapters.DocumentFeedEntry" /> 
 
   <adapter
-      for="quills.core.interfaces.IWeblogEntry"
-      provides="Products.basesyndication.interfaces.IFeedSource"
-      factory=".syndication.WeblogEntryFeedSource" /> 
-
-  <adapter
-      for="quills.core.interfaces.IWeblogEntry"
-      provides="Products.basesyndication.interfaces.IFeed"
-      factory=".syndication.WeblogEntryFeed" /> 
-
-  <adapter
-      for="quills.core.interfaces.IWeblog"
+      for="quills.core.interfaces.IWeblogEnhanced"
       provides="Products.basesyndication.interfaces.IFeedSource"
       factory=".syndication.WeblogFeedSource" /> 
 
   <adapter
-      for="quills.core.interfaces.IWeblog"
+      for="quills.core.interfaces.IWeblogEnhanced"
       provides="Products.basesyndication.interfaces.IFeed"
       factory=".syndication.WeblogFeed" /> 
 
@@ -38,7 +28,7 @@
       factory=".syndication.TopicFeedSource" /> 
 
   <browser:pages
-      for="quills.core.interfaces.IWeblog"
+      for="quills.core.interfaces.IWeblogEnhanced"
       class="Products.fatsyndication.browser.feed.GenericFeedView"
       permission="zope2.View">
     <browser:page attribute="atom"  name="atom.xml" />
