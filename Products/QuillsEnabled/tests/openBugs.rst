@@ -5,7 +5,7 @@ This file contains tests for bugs not yet fixed.
 
 
 Issue #143: Portlets do not show up in empty blogs
--------------------------------------------------
+--------------------------------------------------
 
 This issue is caused by the way BasePortletRenderer implements ``available``.
 
@@ -45,3 +45,23 @@ And now with that one published. In all three cases the portlet should show up.
     >>> wft.doActionFor(entry, 'publish')
     >>> renderer.available
     True
+
+
+Issue #144:  Syndication AttributeError: getExcerpt
+---------------------------------------------------
+
+Syndication is broken in QuillsEnabled svn trunk (rev. 72157) because
+the view (e.g. atom.xml) tries to access getExcerpt which is undefined
+for ATDocument.
+
+First we need an entry and get a feed adapter for it.
+
+    >>> entry = self.weblog.addEntry("A blog entry",
+    ...              "This is no excerpt.", "Contents here")
+    >>> from Products.basesyndication.interfaces import IFeedEntry
+    >>> feedAdapter = IFeedEntry(entry)
+
+Now let's see if we can get the correct description.
+
+    >>> feedAdapter.getDescription()
+    'This is no excerpt.'
