@@ -54,10 +54,22 @@ Syndication is broken in QuillsEnabled svn trunk (rev. 72157) because
 the view (e.g. atom.xml) tries to access getExcerpt which is undefined
 for ATDocument.
 
-First we need an entry and get a feed adapter for it.
+First we create an entry. We cannot immediately adapt from what we get
+from addEntry since it already is an adapter (and we do not really of
+what portal type). (There cannot be an adapter from IWeblogEntry to
+IFeedEntry because this would make it impossible (or hard at least) to
+use arbitrary content types for blog contents.)
 
     >>> entry = self.weblog.addEntry("A blog entry",
     ...              "This is no excerpt.", "Contents here")
+    >>> from quills.core.interfaces import IWeblogEntry
+    >>> IWeblogEntry.isImplementedBy(entry) 
+    True
+
+So we will navigate to the actual content (instead of for instance
+calling context on the entry).
+
+    >>> entry = entry.context
     >>> from Products.basesyndication.interfaces import IFeedEntry
     >>> feedAdapter = IFeedEntry(entry)
 
