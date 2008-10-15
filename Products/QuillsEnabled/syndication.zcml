@@ -10,45 +10,15 @@
   <adapter
       for="quills.core.interfaces.IWeblogEnhanced"
       provides="Products.basesyndication.interfaces.IFeedSource"
-      factory=".syndication.WeblogFeedSource" /> 
+      factory="quills.app.syndication.WeblogFeedSource" /> 
 
   <adapter
       for="quills.core.interfaces.IWeblogEnhanced"
       provides="Products.basesyndication.interfaces.IFeed"
-      factory=".syndication.WeblogFeed" /> 
-
-  <adapter
-      for="quills.core.interfaces.ITopic"
-      provides="Products.basesyndication.interfaces.IFeed"
-      factory=".syndication.TopicFeed" /> 
-
-  <adapter
-      for="quills.core.interfaces.ITopic"
-      provides="Products.basesyndication.interfaces.IFeedSource"
-      factory=".syndication.TopicFeedSource" /> 
+      factory="quills.app.syndication.WeblogFeed" /> 
 
   <browser:pages
       for="quills.core.interfaces.IWeblogEnhanced"
-      class="Products.fatsyndication.browser.feed.GenericFeedView"
-      permission="zope2.View">
-    <browser:page attribute="atom"  name="atom.xml" />
-    <browser:page attribute="rdf"   name="feed.rdf" />
-    <browser:page attribute="rdf11" name="feed11.rdf" />
-    <browser:page attribute="rss"   name="rss.xml" />
-  </browser:pages>
-
-  <browser:pages
-      for="quills.core.interfaces.ITopic"
-      class="Products.fatsyndication.browser.feed.GenericFeedView"
-      permission="zope2.View">
-    <browser:page attribute="atom"  name="atom.xml" />
-    <browser:page attribute="rdf"   name="feed.rdf" />
-    <browser:page attribute="rdf11" name="feed11.rdf" />
-    <browser:page attribute="rss"   name="rss.xml" />
-  </browser:pages>
-
-  <browser:pages
-      for="quills.core.interfaces.IWeblogEntry"
       class="Products.fatsyndication.browser.feed.GenericFeedView"
       permission="zope2.View">
     <browser:page attribute="atom"  name="atom.xml" />
