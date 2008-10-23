@@ -27,7 +27,15 @@
       provides="quills.core.interfaces.IWeblogEntry"
       factory=".adapters.document.Document2WeblogEntry" />
 
+  <adapter
+      for="Products.ATContentTypes.interface.IATNewsItem"
+      provides="quills.core.interfaces.IWeblogEntry"
+      factory=".adapters.document.Document2WeblogEntry" />
+
   <class class="Products.ATContentTypes.content.document.ATDocument">
+       <implements interface="quills.core.interfaces.IPossibleWeblogEntry" />
+  </class>
+  <class class="Products.ATContentTypes.content.newsitem.ATNewsItem">
        <implements interface="quills.core.interfaces.IPossibleWeblogEntry" />
   </class>
 
