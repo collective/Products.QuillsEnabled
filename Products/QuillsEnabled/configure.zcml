@@ -68,6 +68,20 @@
       handler=".activation.updateIndexes"
       />
 
+  <subscriber
+      for="quills.core.interfaces.IPossibleWeblog
+           .activation.IWeblogActivationEvent"
+      handler="quills.app.activation.registerContextPortlets"
+      />
+
+  <subscriber
+      for="quills.core.interfaces.IPossibleWeblog
+           .activation.IWeblogDeactivationEvent"
+      handler=".activation.unregisterContextPortlets"
+      />
+
+
+
   <!-- profiles -->
   <genericsetup:registerProfile
       name="default"
@@ -77,5 +91,15 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       />
+
+  <genericsetup:upgradeStep
+      source="0.0"
+      destination="1.7"
+      profile="Products.QuillsEnabled:default"
+      title="Remove by-interface portlets assignments"
+      description="We don't need by-interface portlet assignments in QuillsEnabled based Weblog entries, because they are registered in context"
+      handler=".migrations.removePortletAssignments"
+      />
+
 
 </configure>

@@ -9,7 +9,6 @@ from Products.CMFCore.utils import getToolByName
 
 # Quills imports
 from quills.app.setuphandlers import setup_gs_profiles
-from quills.app.setuphandlers import weblogPortletSetup
 
 # Local imports
 import config
@@ -32,7 +31,6 @@ def importFinalSteps(context):
         commit()
 
     setup_gs_profiles(portal, config.GS_DEPENDENCIES, out)
-    weblogPortletSetup(portal, out)
     print >> out, u"Successfully installed %s." % config.PROJECTNAME
     return out.getvalue()
 

@@ -8,7 +8,7 @@ from quills.core.interfaces.enabled import IPossibleWeblog
 from quills.core.interfaces.enabled import IWeblogEnhanced
 
 # Local imports
-from Products.QuillsEnabled.activation import WeblogActivationEvent
+from Products.QuillsEnabled.activation import WeblogActivationEvent, WeblogDeactivationEvent
 
 
 class BlogActivation(object):
@@ -37,10 +37,8 @@ class Toggle(object):
     def __call__(self):
         if IWeblogEnhanced.providedBy(self.context):
             # deactivate blog
+            event.notify(WeblogDeactivationEvent(self.context))
             noLongerProvides(self.context, IWeblogEnhanced)
-            # We have no need to fire a deactivation event currently, but this
-            # is where it would go if that need arose. For now, we only need the
-            # activation event in the next code block.
             msg = 'blog deactivated'
         elif IPossibleWeblog.providedBy(self.context):
             alsoProvides(self.context, IWeblogEnhanced)
