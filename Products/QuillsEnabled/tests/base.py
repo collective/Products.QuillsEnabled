@@ -17,8 +17,9 @@ from Products.PloneTestCase.PloneTestCase import PloneTestCase
 from Products.PloneTestCase.PloneTestCase import FunctionalTestCase
 from Products.PloneTestCase.PloneTestCase import setupPloneSite
 
-from quills.core.interfaces import IWeblog, IWeblogEnhanced
+from quills.core.interfaces import IWeblog
 from quills.app.tests.base import BrowserMixin
+from Products.QuillsEnabled.browser.activation import Toggle as BlogToggle
 
 # Set up a Plone site, and apply the Quills extension profile
 setupPloneSite(products=['QuillsEnabled'])
@@ -35,7 +36,8 @@ class QuillsTestCaseMixin(BrowserMixin):
         self.portal.invokeFactory('Folder', id='weblog')
         folder = self.portal.weblog
         self.portal.portal_workflow.doActionFor(folder, 'publish')
-        alsoProvides(folder, IWeblogEnhanced)
+        turnIntoBlog = BlogToggle(folder, self.portal.REQUEST)
+        turnIntoBlog()
         self.weblog = IWeblog(folder)
         self.weblog_content = folder
 
@@ -67,6 +69,7 @@ class QuillsContributorDocTestCase(QuillsDocTestCase):
         self.setRoles(('Contributor', 'Reviewer'))
         self.portal.invokeFactory('Folder', id='weblog')
         folder = self.portal.weblog
-        alsoProvides(folder, IWeblogEnhanced)
+        turnIntoBlog = BlogToggle(folder, self.portal.REQUEST)
+        turnIntoBlog()
         self.weblog = IWeblog(folder)
         self.weblog_content = folder
