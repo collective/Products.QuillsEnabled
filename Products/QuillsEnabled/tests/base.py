@@ -33,13 +33,17 @@ class QuillsTestCaseMixin(BrowserMixin):
 
     def afterSetUp(self):
         self.loginAsPortalOwner()
-        self.portal.invokeFactory('Folder', id='weblog')
-        folder = self.portal.weblog
+        self.weblog = self.createBlog('weblog')
+        self.weblog_content = self.portal.weblog
+
+    def createBlog(self, id):
+        """Create a weblog instance."""
+        self.portal.invokeFactory('Folder', id=id)
+        folder = self.portal[id]
         self.portal.portal_workflow.doActionFor(folder, 'publish')
         turnIntoBlog = BlogToggle(folder, self.portal.REQUEST)
         turnIntoBlog()
-        self.weblog = IWeblog(folder)
-        self.weblog_content = folder
+        return IWeblog(folder)
 
 
 class QuillsTestCase(QuillsTestCaseMixin, PloneTestCase):
