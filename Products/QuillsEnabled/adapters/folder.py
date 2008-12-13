@@ -4,7 +4,6 @@ from zope.component.interface import interfaceToName
 from zope.component import getUtility
 from zope.app.container.interfaces import INameChooser
 from Products.ZCatalog.CatalogBrains import AbstractCatalogBrain
-from DateTime import DateTime
 
 # Plone imports
 from Products.CMFCore.utils import getToolByName
@@ -62,7 +61,6 @@ class Folder2Weblog(WeblogMixin):
             object_provides=interfaceToName(portal, IPossibleWeblogEntry),
             path={ 'query' : '/'.join(self.context.getPhysicalPath()),
                    'level' : 0, },
-            effective={'query' : DateTime(), 'range' : 'max'},
             sort_on='effective',
             sort_order='reverse',
             review_state={ 'query'    : weblog_config.published_states,
