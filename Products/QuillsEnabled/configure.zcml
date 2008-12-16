@@ -7,6 +7,13 @@
   <include package="quills.app"/>
   <include file="syndication.zcml" />
 
+    <class class=".adapters.document.Document2WeblogEntry">
+      <require
+          permission="zope2.View"
+          interface="quills.core.interfaces.IWeblogEntry"
+          />
+   </class>
+
   <class class="Products.Archetypes.atapi.BaseFolder">
       <implements interface="quills.core.interfaces.IPossibleWeblog" />
   </class>

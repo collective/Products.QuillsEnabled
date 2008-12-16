@@ -4,6 +4,7 @@ from datetime import datetime
 # Zope imports
 from zope.interface import implements
 from DateTime.DateTime import DateTime
+from Acquisition import Explicit
 
 # Plone imports
 from Products.CMFCore.utils import getToolByName
@@ -15,7 +16,7 @@ from quills.app.utilities import QuillsMixin, recurseToInterface
 from quills.core.interfaces import IWeblog, IWeblogEnhanced
 
 
-class Document2WeblogEntry(QuillsMixin):
+class Document2WeblogEntry(Explicit, QuillsMixin):
     """Adapts an ATDocument to IWeblogEntry.
 
     >>> from zope.interface.verify import verifyClass

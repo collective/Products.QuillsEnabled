@@ -137,7 +137,7 @@ class Folder2Weblog(WeblogMixin):
             id = getUtility(IIDNormalizer).normalize(title)
         self.context.invokeFactory(id=id, type_name=config.default_type)
         obj = getattr(self.context, id)
-        entry = IWeblogEntry(obj)
+        entry = IWeblogEntry(obj).__of__(obj)
         entry.setTitle(title)
         entry.setText(text, mimetype)
         entry.setExcerpt(excerpt)

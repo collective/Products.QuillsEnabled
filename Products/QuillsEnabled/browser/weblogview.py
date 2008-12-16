@@ -60,8 +60,8 @@ class WeblogEntryView(BaseWeblogEntryView, BaseView):
     def getWeblogEntry(self):
         """See IWeblogEntryView.
         """
-        return IWeblogEntry(self.context)
-
+        return IWeblogEntry(self.context).__of__(self.context)
+    
 
 class TopicView(WeblogView):
     """
