@@ -101,3 +101,30 @@ actually created). See issue http://plone.org/products/quills/issues/105:
     >> browser.getControl('Save').click()
 
 
+Breadcrumbs
+***********
+
+Viewing an entry in its archive location should give us breadcrumbs that respect
+the archive location (e.g. 'You are here: Home -> Blog -> 2008 -> December'). To
+test this, first we'll set the publication date to something static that we can
+check for (rather than just 'now'):
+
+    >>> from DateTime.DateTime import DateTime
+    >>> entry.setPublicationDate(DateTime('2008/12/16'))
+
+Now let's check the breadcrumb is there for the year:
+
+    >>> browser.open('http://nohost/plone/weblog/2008/12/16/new-entry')
+    >>> import re
+    >>> s = '<a href="http://nohost/plone/weblog/2008">2008</a>\s*<span class="breadcrumbSeparator">\s*&rarr;'
+    >>> re.search(s, browser.contents) is not None
+    True
+
+We also check that we've got the order of the breadcrumbs correct. During
+development, there was a problem with the entry appearing between 'Home' and
+'Weblog'.
+
+    >>> s = '<a href="http://nohost/plone">Home</a>\s*<span class="breadcrumbSeparator">\s*&rarr;\s*</span>\s*<span dir="ltr">\s*<a href="http://nohost/plone/weblog">weblog</a>'
+    >>> re.search(s, browser.contents) is not None
+    True
+        
