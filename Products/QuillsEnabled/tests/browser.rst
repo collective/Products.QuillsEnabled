@@ -96,6 +96,10 @@ comment, as well:
     >>> browser.getControl('Comment').value = "Is dead. Is deceased."
 
 However, currently this still raises an error (eventhough the comment is
-actually created). See issue http://plone.org/products/quills/issues/105:
+actually created). The problem seems to be that zope.testbrowser cannot handle
+urls that have anchors (e.g. 'foo/bar#anchor') at the end. The comment machinery
+tries to redirect to such a url after the 'click', so this next call fails. See
+issue http://plone.org/products/quills/issues/105 for more details of why this
+test exists.
 
     >> browser.getControl('Save').click()
