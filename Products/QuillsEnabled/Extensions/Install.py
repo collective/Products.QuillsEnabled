@@ -13,6 +13,9 @@ from Products.Archetypes.Extensions.utils import installTypes, install_subskin
 
 # Local imports
 from Products.QuillsEnabled import config
+from quills.app.setuphandlers import addNewDiscussionReplyFormAction
+from quills.app.setuphandlers import delNewDiscussionReplyFormAction
+
 
 EXTENSION_PROFILES = ('Products.QuillsEnabled:default',)
 
@@ -36,7 +39,7 @@ def install(self):
         transaction.savepoint()
 
     install_subskin(self, out, config.GLOBALS)
-
+    addNewDiscussionReplyFormAction(portal, out)
     # Keep some of our types out of the navtree
     #updateNavtreeProperties(self, out)
     # Allow Weblogs to be used as the front page of a site
@@ -80,6 +83,7 @@ def uninstall(self):
     portal_controlpanel = getToolByName(self, 'portal_controlpanel')
     portal_controlpanel.unregisterApplication(config.PROJECTNAME)
     unregisterStylesheets(self)
+    delNewDiscussionReplyFormAction(self, out)
     #permissions.unsetupPortalSecurity(self, out)
     print >> out, u"Successfully uninstalled %s." % config.PROJECTNAME
     return out.getvalue()
