@@ -40,6 +40,12 @@ class Folder2Weblog(WeblogMixin):
         self._portal = None
         self._catalog = None
 
+    def getId(self):
+        return self.context.getId()
+
+    def getTitle(self):
+        return self.context.getTitle()
+
     def hasEntry(self, id):
         return self.context.hasObject(id)
 

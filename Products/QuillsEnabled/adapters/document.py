@@ -32,6 +32,11 @@ class Document2WeblogEntry(Explicit, QuillsMixin):
     def __init__(self, context):
         self.context = context
 
+    def getId(self):
+        """See IWeblogEntry.
+        """
+        return self.context.getId()
+
     def getTitle(self):
         """See IWeblogEntry.
         """
