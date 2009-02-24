@@ -3,7 +3,6 @@ from zope.interface import implements
 from zope.component.interface import interfaceToName
 from zope.component import getUtility
 from zope.app.container.interfaces import INameChooser
-from Products.ZCatalog.CatalogBrains import AbstractCatalogBrain
 
 # Plone imports
 from Products.CMFCore.utils import getToolByName
@@ -20,7 +19,7 @@ from quills.app.topic import AuthorTopic
 from quills.app.topic import TopicContainer
 from quills.app.archive import ArchiveContainer
 from quills.app.archive import YearArchive
-from quills.app.weblogentrybrain import WeblogEntryCatalogBrain
+from quills.app.utilities import BloggifiedCatalogResults
 from quills.app.weblog import WeblogMixin
 from quills.app.interfaces import IWeblogEnhancedConfiguration
 
@@ -61,7 +60,6 @@ class Folder2Weblog(WeblogMixin):
         """See IWeblog.
         """
         catalog, portal = self._setCatalog()
-        catalog._catalog.useBrains(WeblogEntryCatalogBrain)
         weblog_config = IWeblogEnhancedConfiguration(self.context)
         results = catalog(
             object_provides=interfaceToName(portal, IPossibleWeblogEntry),
@@ -71,7 +69,7 @@ class Folder2Weblog(WeblogMixin):
             sort_order='reverse',
             review_state={ 'query'    : weblog_config.published_states,
                            'operator' : 'or'})
-        return self._filter(results, maximum, offset)
+        return BloggifiedCatalogResults(self._filter(results, maximum, offset))
 
     def getArchives(self):
         """See IWeblog.
@@ -168,7 +166,7 @@ class Folder2Weblog(WeblogMixin):
     def getDrafts(self, maximum=None, offset=0):
         """See IWeblog.
         """
-        catalog, portal = self._setCatalog(WeblogEntryCatalogBrain)
+        catalog, portal = self._setCatalog()
         weblog_config = IWeblogEnhancedConfiguration(self.context)
         results = catalog(
             object_provides=interfaceToName(portal, IPossibleWeblogEntry),
@@ -184,14 +182,13 @@ class Folder2Weblog(WeblogMixin):
         """See IWeblog.
         """
         catalog, portal = self._setCatalog()
-        catalog._catalog.useBrains(WeblogEntryCatalogBrain)
         results = catalog(
             object_provides=interfaceToName(portal, IPossibleWeblogEntry),
             path={ 'query' : '/'.join(self.context.getPhysicalPath()),
                    'level' : 0, },
             sort_on = 'effective',
             sort_order = 'reverse')
-        return self._filter(results, maximum, offset)
+        return BloggifiedCatalogResults(self._filter(results, maximum, offset))
 
     def __len__(self):
         return len(self.getEntries())
@@ -201,14 +198,10 @@ class Folder2Weblog(WeblogMixin):
         """
         self.context.manage_delObjects(ids=[entry_id])
 
-    def _setCatalog(self, brains=None):
+    def _setCatalog(self):
         if self._catalog is None:
             self._catalog = getToolByName(self.context, 'portal_catalog')
         catalog = self._catalog
-        if brains is None:
-            catalog._catalog.useBrains(AbstractCatalogBrain)
-        else:
-            catalog._catalog.useBrains(brains)
         if self._portal is None:
             self._portal = getToolByName(self.context, 'portal_url').getPortalObject()
         portal = self._portal
