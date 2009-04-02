@@ -6,23 +6,18 @@
   <include package=".browser" />
   <include package="quills.app"/>
   <include file="syndication.zcml" />
+  <include file="traversal.zcml" />
 
-    <class class=".adapters.document.Document2WeblogEntry">
+  <class class=".adapters.document.Document2WeblogEntry">
       <require
           permission="zope2.View"
           interface="quills.core.interfaces.IWeblogEntry"
           />
-   </class>
+  </class>
 
   <class class="Products.Archetypes.atapi.BaseFolder">
       <implements interface="quills.core.interfaces.IPossibleWeblog" />
   </class>
-
-  <adapter
-      for="quills.core.interfaces.IWeblogEnhanced
-           zope.publisher.interfaces.http.IHTTPRequest"
-      provides="zope.publisher.interfaces.IPublishTraverse"
-      factory="quills.app.traversal.WeblogTraverser" />
 
   <adapter
       for="Products.Archetypes.interfaces.IBaseFolder"

@@ -1,0 +1,16 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <adapter
+      for="quills.core.interfaces.IWeblogEnhanced
+           zope.publisher.interfaces.http.IHTTPRequest"
+      provides="zope.publisher.interfaces.IPublishTraverse"
+      factory=".traversal.WeblogTraverser" />
+
+  <adapter
+      for="quills.core.interfaces.IWeblogArchive
+           .traversal.IInsideWeblog"
+      provides="zope.publisher.interfaces.IPublishTraverse"
+      factory=".traversal.WeblogArchiveTraverser" />
+
+
+</configure>
