@@ -1,24 +1,25 @@
 from setuptools import setup, find_packages
+import os
 
-version = 'svn/1.7-dev'
+version = '1.7.0b3'
 
 setup(name='Products.QuillsEnabled',
       version=version,
-      description="A Blogging Product for Plone",
-      long_description="""\
-QuillsEnabled is an Enterprise Weblog System for the Plone content management system. It is designed from the ground up to work well and provide specialized features for a multi-blog, multi-user environment.""",
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+      description="A Blogging Suite for Plone.",
+      long_description=open("README.txt").read() + "\n" +
+                       open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
+        "Development Status :: 4 - Beta",
         "Framework :: Plone",
-        "Framework :: Zope2",
-        "Framework :: Zope3",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='plone blogging',
       author='Quills Team',
-      author_email='quills-dev@lists.etria.com',
+      author_email='plone-quills@googlegroups.com',
       url='http://plone.org/products/quills',
+      download_url="http://svn.plone.org/svn/collective/Products.Quills",
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['Products'],
@@ -26,10 +27,7 @@ QuillsEnabled is an Enterprise Weblog System for the Plone content management sy
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'quills.app',
-          'Products.basesyndication',
-          'Products.fatsyndication',
-          # -*- Extra requirements: -*-
+          'quills.app>=1.7.0b3,<=1.7.99',
       ],
       entry_points="""
       # -*- Entry points: -*-
