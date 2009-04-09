@@ -28,6 +28,8 @@ setup(name='Products.QuillsEnabled',
       install_requires=[
           'setuptools',
           'quills.app>=1.7.0b3,<=1.7.99',
+          'Products.basesyndication',
+          'Products.fatsyndication',
       ],
       entry_points="""
       # -*- Entry points: -*-

@@ -6,7 +6,7 @@ Quills is an Enterprise Weblog System for the Plone content management system.
 It is designed from the ground up to work well and provide specialized features
 for a multi-blog, multi-user environment.
 
-Requires Plone 3 or later.
+Requires Plone 3.1 or later.
 
 
 Getting started

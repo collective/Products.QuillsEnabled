@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>1.7.0b3</version>
+  <description>A non-intrusive blogging application.</description>
+  <version>1.7</version>
+  <dependencies>
+    <dependency>profile-quills.app:default</dependency>
+  </dependencies>
 </metadata>

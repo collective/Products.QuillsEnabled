@@ -9,7 +9,10 @@ from zope.interface import alsoProvides
 
 from Testing import ZopeTestCase
 
-# Let Zope know about QuillsEnabled
+
+# Let Zope know about the products we need. Only "old style" products with
+# the "Products" prefix need to appear here. 
+ZopeTestCase.installProduct('fatsyndication')
 ZopeTestCase.installProduct('QuillsEnabled')
 
 # Import PloneTestCase - this registers more products with Zope as a side effect

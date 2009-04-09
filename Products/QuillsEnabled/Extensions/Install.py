@@ -35,7 +35,8 @@ def install(self):
     #registerStylesheets(self, out)
 
     for extension_id in EXTENSION_PROFILES:
-        portal_setup.runAllImportStepsFromProfile('profile-%s' % extension_id, purge_old=False)
+        portal_setup.runAllImportStepsFromProfile('profile-%s' % extension_id,
+                                                  purge_old=False)
         transaction.savepoint()
 
     install_subskin(self, out, config.GLOBALS)
