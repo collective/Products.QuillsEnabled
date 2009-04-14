@@ -20,6 +20,11 @@
   </class>
 
   <adapter
+      for="quills.core.interfaces.enabled.IPossibleWeblogEntry"
+      provides="Products.basesyndication.interfaces.IFeedEntry"
+      factory=".adapters.feedentry.WeblogEntryFeedEntry" /> 
+
+  <adapter
       for="Products.Archetypes.interfaces.IBaseFolder"
       provides="quills.core.interfaces.IWeblog"
       factory=".adapters.folder.Folder2Weblog" />
