@@ -32,3 +32,4 @@ The same for the portal type instance wrapped.
     >>> feedAdapter = IFeedEntry(entry)
     >>> feedAdapter.getDescription()
     'This is a excerpt.'
+

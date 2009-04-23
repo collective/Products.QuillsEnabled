@@ -1,15 +1,16 @@
 <configure xmlns="http://namespaces.zope.org/browser"
-           xmlns:browser="http://namespaces.zope.org/browser">
+           xmlns:zope="http://namespaces.zope.org/zope">
 
-  <browser:page
-      for="quills.core.interfaces.IPossibleWeblogEntry"
+  <zope:adapter
+      for="quills.core.interfaces.IPossibleWeblogEntry
+           Products.QuillsEnabled.traversal.IInsideWeblog"
+      provides="Products.CMFPlone.browser.interfaces.INavigationBreadcrumbs"
       name="breadcrumbs_view"
-      class="quills.app.browser.breadcrumbs.ArchiveAwareBreadcrumbs"
+      factory="quills.app.browser.breadcrumbs.ArchiveAwareBreadcrumbs"
       permission="zope.Public"
-      allowed_attributes="breadcrumbs"
       />
 
-  <browser:page
+  <page
       for="*"
       name="discussion_reply_redirect"
       class="quills.app.browser.discussionreply.DiscussionReply"
