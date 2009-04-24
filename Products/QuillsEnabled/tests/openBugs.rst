@@ -16,7 +16,7 @@ First we create an entry.
     >>> entry = self.weblog.addEntry("A blog entry",
     ...              "This is a excerpt.", "Contents here")
     >>> from quills.core.interfaces import IWeblogEntry
-    >>> IWeblogEntry.isImplementedBy(entry) 
+    >>> IWeblogEntry.providedBy(entry)
     True
 
 Now we make it a FeedEntry and try to get it's description.

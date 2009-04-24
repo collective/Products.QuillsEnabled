@@ -1,8 +1,7 @@
 # zope imports
 from zope.interface import implements
 from zope.annotation.interfaces import IAnnotations
-from zope.lifecycleevent.interfaces import IObjectEvent
-from zope.lifecycleevent import ObjectEvent
+from zope.component.interfaces import IObjectEvent, ObjectEvent
 from Acquisition import aq_base
 from BTrees.OOBTree import OOBTree
 
