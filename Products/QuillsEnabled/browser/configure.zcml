@@ -26,7 +26,7 @@
           template="browser/weblog_view.pt"
           permission="zope2.View"
           name="weblog_view"
-          allowed_interface="quills.core.browser.interfaces.IWeblogView" />
+       />
 
       <defaultView
           for="quills.core.interfaces.IWeblogEnhanced"
@@ -38,7 +38,7 @@
           template="browser/weblogentry_view.pt"
           permission="zope2.View"
           name="weblogentry_view"
-          allowed_interface="quills.core.browser.interfaces.IWeblogEntryView" />
+       />
 
       <page
           for="quills.core.interfaces.IWeblogEnhanced"
