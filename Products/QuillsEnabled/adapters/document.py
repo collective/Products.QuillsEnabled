@@ -123,29 +123,51 @@ class Document2WeblogEntry(Explicit, QuillsMixin):
     def publish(self, pubdate=None):
         """See IWorkflowedWeblogEntry.
         """
-        wf_tool = getToolByName(self.context, 'portal_workflow')
-        current_state = wf_tool.getInfoFor(self.context, "review_state")
-        if current_state == "published":
+        if self.isPublished():
             # do nothing if the entry has already been published
             return
         # XXX Need to be able to handle python datetime instances for pubdate.
         if pubdate is None:
             pubdate = DateTime()
         self.setPublicationDate(pubdate)
-        wf_tool.doActionFor(self.context, 'publish')
+
+        wf_tool = getToolByName(self.context, 'portal_workflow')
+        try:
+            wf_tool.doActionFor(self.context, 'publish')
+        except WorkflowException:
+            state = wf_tool.getInfoFor(self.context, 'review_state')
+            workflow = wf_tool.getWorkflowsFor(self.context)[0].id
+            objectPath = "/".join(self.context.getPhysicalPath())
+            log("WeblogEntry.publish failed, most probable because the current "
+                "state '%s' of workflow '%s' of entry '%s' does not define a "
+                "transition 'publish'. To solve this either use another "
+                "workflow, adapt the workflow, or restrain from using this "
+                "method for now. Sorry." % (state, workflow, objectPath))
+            raise
         self.context.reindexObject()
 
     def retract(self):
         """See IWorkflowedWeblogEntry.
         """
-        wf_tool = getToolByName(self.context, 'portal_workflow')
-        current_state = wf_tool.getInfoFor(self.context, "review_state")
-        if current_state == "private":
-            # do nothing if the entry has already been private
+        if not self.isPublished():
+            # do nothing if the entry has already been published
             return
-        wf_tool.doActionFor(self.context, 'retract')
+        wf_tool = getToolByName(self.context, 'portal_workflow')
+        try:
+            wf_tool.doActionFor(self.context, 'retract')
+        except WorkflowException:
+            state = wf_tool.getInfoFor(self.context, 'review_state')
+            workflow = wf_tool.getWorkflowsFor(self.context)[0].id
+            objectPath = "/".join(self.context.getPhysicalPath())
+            log("WeblogEntry.retract failed, most probable because the current "
+                "state '%s' of workflow '%s' of entry '%s' does not define a "
+                "transition 'retract'. To solve this either use another "
+                "workflow, adapt the workflow, or restrain from using this "
+                "method for now. Sorry." % (state, workflow, objectPath))
+            raise
         self.setPublicationDate(None)
         self.context.reindexObject()
+
 
     def isPublished(self):
         """See IWorkflowedWeblogEntry.
