@@ -10,14 +10,6 @@
       permission="zope.Public"
       />
 
-  <page
-      for="*"
-      name="discussion_reply_redirect"
-      class="quills.app.browser.discussionreply.DiscussionReply"
-      permission="zope.Public"
-      allowed_attributes="__call__"
-      />
-
   <configure package="quills.app">
 
       <page
