@@ -52,24 +52,6 @@
       provides="quills.app.interfaces.IWeblogEnhancedConfiguration"
       factory=".browser.weblogconfig.WeblogEnhancedConfig" />
 
-  <adapter
-      for="quills.core.interfaces.IPossibleWeblogEntry"
-      provides="quills.core.interfaces.IWeblogLocator"
-      factory="quills.app.locator.RecursingUpLocator"
-      />
-
-  <adapter
-      for="quills.core.interfaces.IWeblogEnhanced"
-      provides="quills.core.interfaces.IWeblogLocator"
-      factory="quills.app.locator.RecursingUpLocator"
-      />
-
-  <adapter
-      for="quills.core.interfaces.IBaseContent"
-      provides="quills.core.interfaces.IWeblogLocator"
-      factory="quills.app.locator.RecursingUpLocator"
-      />
-
   <subscriber
       for="quills.core.interfaces.IPossibleWeblog
 	       .activation.IWeblogActivationEvent"

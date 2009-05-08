@@ -3,7 +3,7 @@
 
   <zope:adapter
       for="quills.core.interfaces.IPossibleWeblogEntry
-           Products.QuillsEnabled.traversal.IInsideWeblog"
+           quills.app.traversal.IInsideWeblog"
       provides="Products.CMFPlone.browser.interfaces.INavigationBreadcrumbs"
       name="breadcrumbs_view"
       factory="quills.app.browser.breadcrumbs.ArchiveAwareBreadcrumbs"

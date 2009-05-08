@@ -8,7 +8,7 @@
 
   <adapter
       for="quills.core.interfaces.IWeblogArchive
-           .traversal.IInsideWeblog"
+           quills.app.traversal.IInsideWeblog"
       provides="zope.publisher.interfaces.IPublishTraverse"
       factory=".traversal.WeblogArchiveTraverser" />
 

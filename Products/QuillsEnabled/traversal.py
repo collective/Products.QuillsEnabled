@@ -10,12 +10,8 @@ of a bloggified content type (page, new item, etc).
 
 from quills.core.interfaces import IPossibleWeblogEntry
 from zope.component import queryMultiAdapter
-from zope.interface import alsoProvides, Interface
 import quills.app.traversal
 
-class IInsideWeblog(Interface):
-    """Marker interface for Requests to signal that traversal moves
-    inside a QuillsEnabled weblog."""
 
 def defaultView(request, obj):
     """Fetch the default WeblogEntryView from the given object, if
@@ -38,7 +34,6 @@ class WeblogTraverser(quills.app.traversal.WeblogTraverser):
    
     def publishTraverse(self, request, name):
         resolved = super(WeblogTraverser, self).publishTraverse(request, name)
-        alsoProvides(request, IInsideWeblog)
         return defaultView(request, resolved)
 
 
