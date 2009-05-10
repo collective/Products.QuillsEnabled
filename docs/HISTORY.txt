@@ -1,10 +1,54 @@
-Changelog
+Changelog (QuillsEnabled)
 =========
 
 (name of developer listed in brackets)
 
-svn/1.7-dev Unreleased
+1.7.0 RC1 (unreleased)
 ----------------------
 
-- Initial package structure. [zopeskel]
+1.7.0 Beta 3 (2008-?-?, r?????)
+-------------------------------
+
+
+1.7.0 Beta 2 (2008-?-?, r79562)
+-------------------------------
+
+Contributors in alphabetical order: Érico Andrei, Jan Hackel, Tim Hicks, Mikel Larreategi, Sasha Vincic, raphael
+
+- New Items allowed for posting (r74326)
+
+- leave archive URLs intact while commenting (issue #119, r78681)
+
+- make post titles more visually more promeninent than section headings
+  (issue #151, r78675)
+
+- blog portlets show up as soon as the blog is activated (issue #143 r77100)
+
+- register portlets to the context instead of portal type or interface (r75744, r75747)
+
+- allow arbitrary workflows, specifically the single state workflow works
+  now (r70247; issue #123 r71678, r71711)
+
+- unicode characters in keywords/topics allowed (issue #147 r74930, r74931)
+
+- Quills and QuillsEnabled can coexist on site now (r73682)
+
+- syndication works more reliable (r69456, r69513)
+
+- new and updated translations: basque, brazilian portuguese, german, spanish (r68092, r72830, r72831, r72832, r72877, r72878, r72879, r72921, r72922, r72923, r74082, r74084, r74087, r74089, r74090, r74095, r74101, r74102, r74103, r74104 r75757, r75758, r76081, r76082, r76084, r76085, r76089)
+
+- lot's of internal fixes and improvments (r67215, r68365, r69457, r72833, r72834, r72835, r74085, r74088, r74375, r74923, r75523, r75763, r75991, issue #145 r77704; r78148, r78679)
+
+- better test-bed (r72157, r72191, r72282, r72513, r76260, r76274, r77100, r77539, r78068, r78069, r78078, r78079, r78080)
+
+
+1.7.0 Beta 1 (2008-?-?, r66180)
+-------------------------------
+
+Tim Hicks
+
+- lot's of internal fixes and improvments (r65079, r66166)
+
+
+- list yet to be compiled
 
