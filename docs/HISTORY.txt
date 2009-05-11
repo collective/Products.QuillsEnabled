@@ -49,98 +49,233 @@ change-log covers. In lexical order:
 1.7.0 RC1 (unreleased)
 ----------------------
 
-1.7.0 Beta 3 (2009-04-06, r83858)
+1.7.0 Beta 3 (2009-04-06, r83858_)
 ----------------------------------
 
 (list incomplete)
 
-1.7.0 Beta 2 (2009-01-24, r79562)
+1.7.0 Beta 2 (2009-01-24, r79562_)
 ----------------------------------
 
 Contributors in alphabetical order: Érico Andrei [enrico_andrei],
 Jan Hackel [jhackel], Tim Hicks [tim2p], Mikel Larreategi [erral],
 Raphael Ritz [raphael], Sasha Vincic [svincic]
 
-- New Items allowed for posting [svincic] (r74326)
+- New Items allowed for posting [svincic] (r74326_)
 
 - Fix issue #119: jump back to the archive URLs after commenting.
-  [tim2p] (r78681)
+  [tim2p] (r78681_)
 
 - Fix issue #151: make post titles more visually more prominent than section
-  headings. [tim2p] (r78675)
+  headings. [tim2p] (r78675_)
 
 - Fix issue #143: blog portlets show up as soon as the blog is activated.
-  [jhackel] (r77100)
+  [jhackel] (r77100_)
 
 - Register portlets to the context instead of portal type or interface.
-  [erral] (r75744, r75747)
+  [erral] (r75744_, r75747_)
 
 - Fix issue #147: allow Unicode characters in keywords/topics.
-  [erral] (r74930, r74931)
+  [erral] (r74930_, r74931_)
 
 - Quills and QuillsEnabled can coexist on the same site now.
-  [jhackel] (r73682)
+  [jhackel] (r73682_)
 
 - Fix issue #123: allow arbitrary workflows, specifically the single state
-  workflow works now. [jhackel] (r70247, r71678, r71711)
+  workflow works now. [jhackel] (r70247_, r71678_, r71711_)
 
-- Syndication works more reliable. [svincic] (r69456, r69513)
+- Syndication works more reliable. [svincic] (r69456_, r69513_)
 
 - new and updated translations: basque, brazilian portuguese, german, spanish
-  [enrico_andrei, erral, jhackel] (r68092, r72830, r72831, r72832,
-  r72877, r72878, r72879, r72921, r72922, r72923, r74082, r74084,
-  r74087, r74089, r74090, r74095, r74101, r74102, r74103, r74104,
-  r75757, r75758, r76081, r76082, r76084, r76085, r76089)
+  [enrico_andrei, erral, jhackel] (r68092_, r72830_, r72831_, r72832_,
+  r72877_, r72878_, r72879_, r72921_, r72922_, r72923_, r74082_, r74084_,
+  r74087_, r74089_, r74090_, r74095_, r74101_, r74102_, r74103_, r74104_,
+  r75757_, r75758_, r76081_, r76082_, r76084_, r76085_, r76089_)
 
-- lot's of internal fixes and improvments (r67215, r68365, r69457,
-  r72833, r72834, r72835, r74085, r74088, r74375, r74923, r75523,
-  r75763, r75991, r77704; r78148, r78679)
+- lot's of internal fixes and improvments (r67215_, r68365_, r69457_,
+  r72833_, r72834_, r72835_, r74085_, r74088_, r74375_, r74923_, r75523_,
+  r75763_, r75991_, r77704_; r78148_, r78679_)
 
-- better test-bed (r72157, r72191, r72282, r72513, r76260, r76274,
-  r77100, r77539, r78068, r78069, r78078, r78079, r78080)
+- better test-bed (r72157_, r72191_, r72282_, r72513_, r76260_, r76274_,
+  r77100_, r77539_, r78068_, r78069_, r78078_, r78079_, r78080_)
 
 
-1.7.0 Beta 1 (2008-06-04, r66180)
+1.7.0 Beta 1 (2008-06-04, r66180_)
 ----------------------------------
 
 Contributors in alphabetical order: Tim Hicks [tim2p], Jens W. Klein [jensens],
 Tom Lazar [tomster], Clayton Parker [claytron], Reinout van Rees [reinout],
 Justin Ryan [justizin], Jon Stahl [jonstahl]
 
-- egggified (r62377, r62378, r62379)
+- egggified (r62377_, r62378_, r62379_)
 
-- optional byline for posts [claytron] ](r61086)
+- optional byline for posts [claytron] ](r61086_)
 
-- Only show the recent comments portlet if there are actually comments to show. [claytron] (r59289)
+- Only show the recent comments portlet if there are actually comments to show. [claytron] (r59289_)
 
-- improve looks and stability of portlets [claytron, jensens, justizin, tomster] (r52195, r54914, r55744, r55951, r55952, r56496, r56815, r59288, r59044)
+- improve looks and stability of portlets 
+  [claytron, jensens, justizin, tomster] (r52195_, r54914_, r55744_,
+  r55951_, r55952_, r56496_, r56815_, r59288_, r59044_)
 
-- locate weblog by interface [jensens, tim2p] (r56302, r56814, r56815)
+- locate weblog by interface [jensens, tim2p] (r56302_, r56814_, r56815_)
 
-- fixed bug where archive would miss post on last day of year or month [tim2p] (r56301)
+- fixed bug where archive would miss post on last day of year or month
+  [tim2p] (r56301_)
 
-- more robust and better looking topic and archive views [claytron, tomster] (r52196, r52197, r55953, r55954, r55955)
+- more robust and better looking topic and archive views 
+  [claytron, tomster] (r52196_, r52197_, r55953_, r55954_, r55955_)
 
-- Fix issue #112: Make the URLs generated for comments in the recent comments portlet archive-aware. [tim2p] (r52571)
+- Fix issue #112: Make the URLs generated for comments in the recent
+  comments portlet archive-aware. [tim2p] (r52571_)
 
-- Fix issue #117: Stop the admin portlet being shown to non-admin-ish users. [tim2p] (r52562)
+- Fix issue #117: Stop the admin portlet being shown to non-admin-ish users.
+  [tim2p] (r52562_)
 
-- plone-3-ish looks for Quills [reinout] (r52226, r52228)
+- plone-3-ish looks for Quills [reinout] (r52226_, r52228_)
 
-- style sheet tuning [jonstahl] (r51922)
+- style sheet tuning [jonstahl] (r51922_)
 
-- show comments count [tim2p] (r50095, r50096)
+- show comments count [tim2p] (r50095_, r50096_)
 
-- Fix for issue #111: /archive/ hardcoded into weblog archive urls. [tim2p] (r50065, r50067)
+- Fix for issue #111: /archive/ hardcoded into weblog archive urls.
+  [tim2p] (r50065_, r50067_)
 
-- Fix for issue #97: comments, commenting button and content actions do not show for posts [tim2p] (r50053)
+- Fix for issue #97: comments, commenting button and content actions do
+  not show for posts [tim2p] (r50053_)
 
-- lot's of internal fixes and improvements (r50068, r50966, r51917, r52190, r52194, r55950, r55956, r56528, r56811, r56823, r59287, r61085, r62375, r65079, r66166)
+- lot's of internal fixes and improvements (r50068_, r50966_, r51917_,
+  r52190_, r52194_, r55950_, r55956_, r56528_, r56811_, r56823_,
+  r59287_, r61085_, r62375_, r65079_, r66166_)
 
-- better test-bed (r50100)
+- better test-bed (r50100_)
 
 
-svn/unreleased (pre r50045)
+svn/unreleased (pre r50045_)
 ----------------------------
 
 Left for future generations to dig out...
+
+.. autogenerated link list
+
+.. _r50045: http://dev.plone.org/collective/changeset/50045
+.. _r50053: http://dev.plone.org/collective/changeset/50053
+.. _r50065: http://dev.plone.org/collective/changeset/50065
+.. _r50067: http://dev.plone.org/collective/changeset/50067
+.. _r50068: http://dev.plone.org/collective/changeset/50068
+.. _r50095: http://dev.plone.org/collective/changeset/50095
+.. _r50096: http://dev.plone.org/collective/changeset/50096
+.. _r50100: http://dev.plone.org/collective/changeset/50100
+.. _r50966: http://dev.plone.org/collective/changeset/50966
+.. _r51917: http://dev.plone.org/collective/changeset/51917
+.. _r51922: http://dev.plone.org/collective/changeset/51922
+.. _r52190: http://dev.plone.org/collective/changeset/52190
+.. _r52194: http://dev.plone.org/collective/changeset/52194
+.. _r52195: http://dev.plone.org/collective/changeset/52195
+.. _r52196: http://dev.plone.org/collective/changeset/52196
+.. _r52197: http://dev.plone.org/collective/changeset/52197
+.. _r52226: http://dev.plone.org/collective/changeset/52226
+.. _r52228: http://dev.plone.org/collective/changeset/52228
+.. _r52562: http://dev.plone.org/collective/changeset/52562
+.. _r52571: http://dev.plone.org/collective/changeset/52571
+.. _r54914: http://dev.plone.org/collective/changeset/54914
+.. _r55744: http://dev.plone.org/collective/changeset/55744
+.. _r55950: http://dev.plone.org/collective/changeset/55950
+.. _r55951: http://dev.plone.org/collective/changeset/55951
+.. _r55952: http://dev.plone.org/collective/changeset/55952
+.. _r55953: http://dev.plone.org/collective/changeset/55953
+.. _r55954: http://dev.plone.org/collective/changeset/55954
+.. _r55955: http://dev.plone.org/collective/changeset/55955
+.. _r55956: http://dev.plone.org/collective/changeset/55956
+.. _r56301: http://dev.plone.org/collective/changeset/56301
+.. _r56302: http://dev.plone.org/collective/changeset/56302
+.. _r56496: http://dev.plone.org/collective/changeset/56496
+.. _r56528: http://dev.plone.org/collective/changeset/56528
+.. _r56811: http://dev.plone.org/collective/changeset/56811
+.. _r56814: http://dev.plone.org/collective/changeset/56814
+.. _r56815: http://dev.plone.org/collective/changeset/56815
+.. _r56823: http://dev.plone.org/collective/changeset/56823
+.. _r59044: http://dev.plone.org/collective/changeset/59044
+.. _r59287: http://dev.plone.org/collective/changeset/59287
+.. _r59288: http://dev.plone.org/collective/changeset/59288
+.. _r59289: http://dev.plone.org/collective/changeset/59289
+.. _r61085: http://dev.plone.org/collective/changeset/61085
+.. _r61086: http://dev.plone.org/collective/changeset/61086
+.. _r62375: http://dev.plone.org/collective/changeset/62375
+.. _r62377: http://dev.plone.org/collective/changeset/62377
+.. _r62378: http://dev.plone.org/collective/changeset/62378
+.. _r62379: http://dev.plone.org/collective/changeset/62379
+.. _r65079: http://dev.plone.org/collective/changeset/65079
+.. _r66166: http://dev.plone.org/collective/changeset/66166
+.. _r66180: http://dev.plone.org/collective/changeset/66180
+.. _r67215: http://dev.plone.org/collective/changeset/67215
+.. _r68092: http://dev.plone.org/collective/changeset/68092
+.. _r68365: http://dev.plone.org/collective/changeset/68365
+.. _r69456: http://dev.plone.org/collective/changeset/69456
+.. _r69457: http://dev.plone.org/collective/changeset/69457
+.. _r69513: http://dev.plone.org/collective/changeset/69513
+.. _r70247: http://dev.plone.org/collective/changeset/70247
+.. _r71678: http://dev.plone.org/collective/changeset/71678
+.. _r71711: http://dev.plone.org/collective/changeset/71711
+.. _r72157: http://dev.plone.org/collective/changeset/72157
+.. _r72191: http://dev.plone.org/collective/changeset/72191
+.. _r72282: http://dev.plone.org/collective/changeset/72282
+.. _r72513: http://dev.plone.org/collective/changeset/72513
+.. _r72830: http://dev.plone.org/collective/changeset/72830
+.. _r72831: http://dev.plone.org/collective/changeset/72831
+.. _r72832: http://dev.plone.org/collective/changeset/72832
+.. _r72833: http://dev.plone.org/collective/changeset/72833
+.. _r72834: http://dev.plone.org/collective/changeset/72834
+.. _r72835: http://dev.plone.org/collective/changeset/72835
+.. _r72877: http://dev.plone.org/collective/changeset/72877
+.. _r72878: http://dev.plone.org/collective/changeset/72878
+.. _r72879: http://dev.plone.org/collective/changeset/72879
+.. _r72921: http://dev.plone.org/collective/changeset/72921
+.. _r72922: http://dev.plone.org/collective/changeset/72922
+.. _r72923: http://dev.plone.org/collective/changeset/72923
+.. _r73682: http://dev.plone.org/collective/changeset/73682
+.. _r74082: http://dev.plone.org/collective/changeset/74082
+.. _r74084: http://dev.plone.org/collective/changeset/74084
+.. _r74085: http://dev.plone.org/collective/changeset/74085
+.. _r74087: http://dev.plone.org/collective/changeset/74087
+.. _r74088: http://dev.plone.org/collective/changeset/74088
+.. _r74089: http://dev.plone.org/collective/changeset/74089
+.. _r74090: http://dev.plone.org/collective/changeset/74090
+.. _r74095: http://dev.plone.org/collective/changeset/74095
+.. _r74101: http://dev.plone.org/collective/changeset/74101
+.. _r74102: http://dev.plone.org/collective/changeset/74102
+.. _r74103: http://dev.plone.org/collective/changeset/74103
+.. _r74104: http://dev.plone.org/collective/changeset/74104
+.. _r74326: http://dev.plone.org/collective/changeset/74326
+.. _r74375: http://dev.plone.org/collective/changeset/74375
+.. _r74923: http://dev.plone.org/collective/changeset/74923
+.. _r74930: http://dev.plone.org/collective/changeset/74930
+.. _r74931: http://dev.plone.org/collective/changeset/74931
+.. _r75523: http://dev.plone.org/collective/changeset/75523
+.. _r75744: http://dev.plone.org/collective/changeset/75744
+.. _r75747: http://dev.plone.org/collective/changeset/75747
+.. _r75757: http://dev.plone.org/collective/changeset/75757
+.. _r75758: http://dev.plone.org/collective/changeset/75758
+.. _r75763: http://dev.plone.org/collective/changeset/75763
+.. _r75991: http://dev.plone.org/collective/changeset/75991
+.. _r76081: http://dev.plone.org/collective/changeset/76081
+.. _r76082: http://dev.plone.org/collective/changeset/76082
+.. _r76084: http://dev.plone.org/collective/changeset/76084
+.. _r76085: http://dev.plone.org/collective/changeset/76085
+.. _r76089: http://dev.plone.org/collective/changeset/76089
+.. _r76260: http://dev.plone.org/collective/changeset/76260
+.. _r76274: http://dev.plone.org/collective/changeset/76274
+.. _r77100: http://dev.plone.org/collective/changeset/77100
+.. _r77539: http://dev.plone.org/collective/changeset/77539
+.. _r77704: http://dev.plone.org/collective/changeset/77704
+.. _r78068: http://dev.plone.org/collective/changeset/78068
+.. _r78069: http://dev.plone.org/collective/changeset/78069
+.. _r78078: http://dev.plone.org/collective/changeset/78078
+.. _r78079: http://dev.plone.org/collective/changeset/78079
+.. _r78080: http://dev.plone.org/collective/changeset/78080
+.. _r78148: http://dev.plone.org/collective/changeset/78148
+.. _r78675: http://dev.plone.org/collective/changeset/78675
+.. _r78679: http://dev.plone.org/collective/changeset/78679
+.. _r78681: http://dev.plone.org/collective/changeset/78681
+.. _r79562: http://dev.plone.org/collective/changeset/79562
+.. _r83858: http://dev.plone.org/collective/changeset/83858
+.. end of autogenerated link list
