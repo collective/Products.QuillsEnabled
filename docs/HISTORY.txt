@@ -1,54 +1,146 @@
-Changelog (QuillsEnabled)
+Changelog
 =========
 
-(name of developer listed in brackets)
+The following people contributed to the Quills project during the period this 
+change-log covers. In lexical order:
+
+- Érico Andrei [erico_andrei_]
+
+- ? [dunny]
+
+- `Jan Hackel`_ [jhackel_]
+
+- `Tim Hicks`_ [tim2p_]
+
+- Jens W. Klein [jensens_]
+
+- Mikel Larreategi [erral]
+
+- Tom Lazar [tomster_],
+
+- Clayton Parker [claytron_]
+
+- `Reinout van Rees`_ [reinout_] 
+
+- Raphael Ritz [raphael_]
+
+- Justin Ryan [justizin_]
+
+- Jon Stahl [jonstahl_]
+
+- Sasha Vincic [svincic_]
+
+.. _erico_andrei: http://plone.org/author/erico_andrei
+.. _`Jan Hackel`: mailto:plonecode@hackel.name
+.. _jhackel: http://plone.org/author/jhackel
+.. _`Tim Hicks`: mailto:tim@sitefusion.co.uk
+.. _tim2p: http://plone.org/author/tim2p
+.. _jensens: http://plone.org/author/jensens
+.. _tomster: http://plone.org/author/tomster
+.. _claytron: http://plone.org/author/claytron
+.. _`Reinout van Rees`: mailto:reinout@vanrees.org
+.. _reinout: http://plone.org/author/reinout
+.. _raphael: http://plone.org/author/raphael
+.. _justizin: http://plone.org/author/justizin
+.. _jonstahl: http://plone.org/author/jonstahl
+.. _svincic: http://plone.org/author/svincic
+
 
 1.7.0 RC1 (unreleased)
 ----------------------
 
-1.7.0 Beta 3 (2008-?-?, r?????)
--------------------------------
+1.7.0 Beta 3 (2009-04-06, r83858)
+----------------------------------
+
+(list incomplete)
+
+1.7.0 Beta 2 (2009-01-24, r79562)
+----------------------------------
+
+Contributors in alphabetical order: Érico Andrei [enrico_andrei],
+Jan Hackel [jhackel], Tim Hicks [tim2p], Mikel Larreategi [erral],
+Raphael Ritz [raphael], Sasha Vincic [svincic]
+
+- New Items allowed for posting [svincic] (r74326)
+
+- Fix issue #119: jump back to the archive URLs after commenting.
+  [tim2p] (r78681)
+
+- Fix issue #151: make post titles more visually more prominent than section
+  headings. [tim2p] (r78675)
+
+- Fix issue #143: blog portlets show up as soon as the blog is activated.
+  [jhackel] (r77100)
+
+- Register portlets to the context instead of portal type or interface.
+  [erral] (r75744, r75747)
+
+- Fix issue #147: allow Unicode characters in keywords/topics.
+  [erral] (r74930, r74931)
+
+- Quills and QuillsEnabled can coexist on the same site now.
+  [jhackel] (r73682)
+
+- Fix issue #123: allow arbitrary workflows, specifically the single state
+  workflow works now. [jhackel] (r70247, r71678, r71711)
+
+- Syndication works more reliable. [svincic] (r69456, r69513)
+
+- new and updated translations: basque, brazilian portuguese, german, spanish
+  [enrico_andrei, erral, jhackel] (r68092, r72830, r72831, r72832,
+  r72877, r72878, r72879, r72921, r72922, r72923, r74082, r74084,
+  r74087, r74089, r74090, r74095, r74101, r74102, r74103, r74104,
+  r75757, r75758, r76081, r76082, r76084, r76085, r76089)
+
+- lot's of internal fixes and improvments (r67215, r68365, r69457,
+  r72833, r72834, r72835, r74085, r74088, r74375, r74923, r75523,
+  r75763, r75991, r77704; r78148, r78679)
+
+- better test-bed (r72157, r72191, r72282, r72513, r76260, r76274,
+  r77100, r77539, r78068, r78069, r78078, r78079, r78080)
 
 
-1.7.0 Beta 2 (2008-?-?, r79562)
--------------------------------
+1.7.0 Beta 1 (2008-06-04, r66180)
+----------------------------------
 
-Contributors in alphabetical order: Érico Andrei, Jan Hackel, Tim Hicks, Mikel Larreategi, Sasha Vincic, raphael
+Contributors in alphabetical order: Tim Hicks [tim2p], Jens W. Klein [jensens],
+Tom Lazar [tomster], Clayton Parker [claytron], Reinout van Rees [reinout],
+Justin Ryan [justizin], Jon Stahl [jonstahl]
 
-- New Items allowed for posting (r74326)
+- egggified (r62377, r62378, r62379)
 
-- leave archive URLs intact while commenting (issue #119, r78681)
+- optional byline for posts [claytron] ](r61086)
 
-- make post titles more visually more promeninent than section headings
-  (issue #151, r78675)
+- Only show the recent comments portlet if there are actually comments to show. [claytron] (r59289)
 
-- blog portlets show up as soon as the blog is activated (issue #143 r77100)
+- improve looks and stability of portlets [claytron, jensens, justizin, tomster] (r52195, r54914, r55744, r55951, r55952, r56496, r56815, r59288, r59044)
 
-- register portlets to the context instead of portal type or interface (r75744, r75747)
+- locate weblog by interface [jensens, tim2p] (r56302, r56814, r56815)
 
-- allow arbitrary workflows, specifically the single state workflow works
-  now (r70247; issue #123 r71678, r71711)
+- fixed bug where archive would miss post on last day of year or month [tim2p] (r56301)
 
-- unicode characters in keywords/topics allowed (issue #147 r74930, r74931)
+- more robust and better looking topic and archive views [claytron, tomster] (r52196, r52197, r55953, r55954, r55955)
 
-- Quills and QuillsEnabled can coexist on site now (r73682)
+- Fix issue #112: Make the URLs generated for comments in the recent comments portlet archive-aware. [tim2p] (r52571)
 
-- syndication works more reliable (r69456, r69513)
+- Fix issue #117: Stop the admin portlet being shown to non-admin-ish users. [tim2p] (r52562)
 
-- new and updated translations: basque, brazilian portuguese, german, spanish (r68092, r72830, r72831, r72832, r72877, r72878, r72879, r72921, r72922, r72923, r74082, r74084, r74087, r74089, r74090, r74095, r74101, r74102, r74103, r74104 r75757, r75758, r76081, r76082, r76084, r76085, r76089)
+- plone-3-ish looks for Quills [reinout] (r52226, r52228)
 
-- lot's of internal fixes and improvments (r67215, r68365, r69457, r72833, r72834, r72835, r74085, r74088, r74375, r74923, r75523, r75763, r75991, issue #145 r77704; r78148, r78679)
+- style sheet tuning [jonstahl] (r51922)
 
-- better test-bed (r72157, r72191, r72282, r72513, r76260, r76274, r77100, r77539, r78068, r78069, r78078, r78079, r78080)
+- show comments count [tim2p] (r50095, r50096)
 
+- Fix for issue #111: /archive/ hardcoded into weblog archive urls. [tim2p] (r50065, r50067)
 
-1.7.0 Beta 1 (2008-?-?, r66180)
--------------------------------
+- Fix for issue #97: comments, commenting button and content actions do not show for posts [tim2p] (r50053)
 
-Tim Hicks
+- lot's of internal fixes and improvements (r50068, r50966, r51917, r52190, r52194, r55950, r55956, r56528, r56811, r56823, r59287, r61085, r62375, r65079, r66166)
 
-- lot's of internal fixes and improvments (r65079, r66166)
+- better test-bed (r50100)
 
 
-- list yet to be compiled
+svn/unreleased (pre r50045)
+----------------------------
 
+Left for future generations to dig out...
