@@ -14,7 +14,7 @@ change-log covers. In lexical order:
 
 - Jens W. Klein [jensens_]
 
-- Mikel Larreategi [erral]
+- Mikel Larreategi [erral_]
 
 - Tom Lazar [tomster_],
 
@@ -28,31 +28,120 @@ change-log covers. In lexical order:
 
 - Jon Stahl [jonstahl_]
 
+- Per Thulin [pthulin_]
+
 - Sasha Vincic [svincic_]
 
-.. _erico_andrei: http://plone.org/author/erico_andrei
-.. _`Jan Hackel`: mailto:plonecode@hackel.name
-.. _jhackel: http://plone.org/author/jhackel
-.. _`Tim Hicks`: mailto:tim@sitefusion.co.uk
-.. _tim2p: http://plone.org/author/tim2p
-.. _jensens: http://plone.org/author/jensens
-.. _tomster: http://plone.org/author/tomster
-.. _claytron: http://plone.org/author/claytron
+.. _Luthy: http://plone.org/author/luthy
 .. _`Reinout van Rees`: mailto:reinout@vanrees.org
-.. _reinout: http://plone.org/author/reinout
-.. _raphael: http://plone.org/author/raphael
-.. _justizin: http://plone.org/author/justizin
+.. _claytron: http://claytron.com/blog
+.. _erico_andrei: http://plone.org/author/erico_andrei
+.. _erral: http://eibar.org/blogak/erral
+.. _jensens: http://plone.org/author/jensens
+.. _jhackel: http://plone.org/author/jhackel
+.. _`Jan Hackel`: mailto:plonecode@hackel.name
 .. _jonstahl: http://plone.org/author/jonstahl
+.. _justizin: http://plone.org/author/justizin
+.. _pthulin: http://plone.org/author/pthulin
+.. _raphael: http://plone.org/author/raphael
+.. _reinout: http://reinout.vanrees.org/
 .. _svincic: http://plone.org/author/svincic
+.. _tim2p: http://quills.sitefusion.co.uk/
+.. _`Tim Hicks`: mailto:tim@sitefusion.co.uk
+.. _tomster: http://plone.org/author/tomster
 
 
 1.7.0 RC1 (unreleased)
 ----------------------
 
+Contributors in alphabetical order: Enzo Cesanelli [Luthy], 
+Jan Hackel [jhackel], Per Thulin [pthulin]
+
+- compiled this change-log [jhackel] (r85768_, r85823_, r85834_, r85835_)
+
+- Fixed issue #164: MarsEdit (and other blogging tools) could not upload
+  images. [jhackel] (r85515_)
+
+- **Obsoleted package Products.QuillsEnabledRemoteBlogging. Remove it from
+  your buildouts!** [jhackel] (r85424_, r85678_)
+
+- Archive view shows posts in full just as those other Quills views do. 
+  [jhackel] (r85423_)
+
+- Fixed issue #191: Topic listing contained broken links 
+  to indvidual topics (keywords). [jhackel] (r85392_)
+
+- Archive does not show the number of posts as a sort of debug information
+  anymore. [jhackel] (r85365_)
+
+- Fixed issue #189: replying to a comment raised a non-fatal TypeError in
+  the portlet code. [jhackel] (r85157_, r85687_)
+
+- message files updated [jhackel] (r85089_, r85091_, r85628_, r85667_)
+
+- Fixed issue #168: Quills was spilling out warning messages. Now it is
+  silent. [jhackel] (r84998_, r85003_, r85076_)
+
+- Fixed issue #180: links to authors were broken in the post view.
+  [jhackel] (r84996_, r84997_)
+
+- Fixed issue #179: Quills broke the static text portlet (and others)
+  across the site. [jhackel] (r84946_, r84958_)
+
+- Feed links now point to archive URLs. [pthulin] (r84193_)
+
+- Fixed issue #178: byline of post did not show up. [?] (r84186_)
+
+- Fixed issue #176: syndication feed icons missing when Product.Quills is
+  not installed. [jhackel] (r84052_)
+
+- egg package updates [jhackel] (r83916_)
+
+- new and updated translations: Italian [Luthy] (r76452_, r85959_)
+
+- internal fixes and improvements (r84037_, r85367_, r85400_, r85684_)
+
+- better test-bed (r85119_, r85149_, r85196_, r85733_)
+
+
 1.7.0 Beta 3 (2009-04-06, r83858_)
 ----------------------------------
 
-(list incomplete)
+Contributors in alphabetical order: Jan Hackel [jhackel], 
+Mikel Larreategi [erral], Tom Lazar [tomster], Sasha Vincic [svincic] 
+
+- egg package updates [jhackel] (r83718_,r83845_, r83848_, r83858_)
+
+- Fixed issue #173: Archive and Quills links portlet could not be added
+  to the blog. [jhackel] (r83446_)
+
+- Fixed issue #172: Could not use the "view" alias to display posts. This
+  broke linking from outside the blog. [jhackel] (r82282_, r83630_, r83674_)
+
+- Fixed issue #153: Archive portlet did not render correctly in the
+  Internet Explorer 6. [jhackel] (r81362_)
+
+- Fixed issues #162 and #149: Quills was leaking memory, plus broke the folder
+  list accoss the whole site. [jhackel] (r81088_, r81282_)
+
+- Fixed issue #159: post descriptions were looking just like the body text.
+  They now match the look of the standard portal types.
+  [jhackel] (r81087_)
+
+- Fixed issue #158: "Add Entry" of the admin portlet did not work. 
+  [jhackel] (r81018_, r81021_)
+
+- Fixed issue #160: describtions of a post could not be saved.
+  [jhackel] (r80964_)
+
+- Authors portlet option are now beeing saved. [erral] (r80792_)
+
+- Skip configuration screen for portlets that have no options to choose from.
+  [erral] (r80787_, r80789_)
+
+- new and updated translations: Swedish [svincic] (r80495_)
+
+- internal fixes and improvements (r80872_)
 
 1.7.0 Beta 2 (2009-01-24, r79562_)
 ----------------------------------
@@ -264,6 +353,7 @@ Left for future generations to dig out...
 .. _r76089: http://dev.plone.org/collective/changeset/76089
 .. _r76260: http://dev.plone.org/collective/changeset/76260
 .. _r76274: http://dev.plone.org/collective/changeset/76274
+.. _r76452: http://dev.plone.org/collective/changeset/76452
 .. _r77100: http://dev.plone.org/collective/changeset/77100
 .. _r77539: http://dev.plone.org/collective/changeset/77539
 .. _r77704: http://dev.plone.org/collective/changeset/77704
@@ -277,5 +367,60 @@ Left for future generations to dig out...
 .. _r78679: http://dev.plone.org/collective/changeset/78679
 .. _r78681: http://dev.plone.org/collective/changeset/78681
 .. _r79562: http://dev.plone.org/collective/changeset/79562
+.. _r80495: http://dev.plone.org/collective/changeset/80495
+.. _r80787: http://dev.plone.org/collective/changeset/80787
+.. _r80789: http://dev.plone.org/collective/changeset/80789
+.. _r80792: http://dev.plone.org/collective/changeset/80792
+.. _r80872: http://dev.plone.org/collective/changeset/80872
+.. _r80964: http://dev.plone.org/collective/changeset/80964
+.. _r81018: http://dev.plone.org/collective/changeset/81018
+.. _r81021: http://dev.plone.org/collective/changeset/81021
+.. _r81087: http://dev.plone.org/collective/changeset/81087
+.. _r81088: http://dev.plone.org/collective/changeset/81088
+.. _r81282: http://dev.plone.org/collective/changeset/81282
+.. _r81362: http://dev.plone.org/collective/changeset/81362
+.. _r82282: http://dev.plone.org/collective/changeset/82282
+.. _r83446: http://dev.plone.org/collective/changeset/83446
+.. _r83630: http://dev.plone.org/collective/changeset/83630
+.. _r83674: http://dev.plone.org/collective/changeset/83674
+.. _r83718: http://dev.plone.org/collective/changeset/83718
+.. _r83845: http://dev.plone.org/collective/changeset/83845
+.. _r83848: http://dev.plone.org/collective/changeset/83848
 .. _r83858: http://dev.plone.org/collective/changeset/83858
+.. _r83916: http://dev.plone.org/collective/changeset/83916
+.. _r84037: http://dev.plone.org/collective/changeset/84037
+.. _r84052: http://dev.plone.org/collective/changeset/84052
+.. _r84186: http://dev.plone.org/collective/changeset/84186
+.. _r84193: http://dev.plone.org/collective/changeset/84193
+.. _r84946: http://dev.plone.org/collective/changeset/84946
+.. _r84958: http://dev.plone.org/collective/changeset/84958
+.. _r84996: http://dev.plone.org/collective/changeset/84996
+.. _r84997: http://dev.plone.org/collective/changeset/84997
+.. _r84998: http://dev.plone.org/collective/changeset/84998
+.. _r85003: http://dev.plone.org/collective/changeset/85003
+.. _r85076: http://dev.plone.org/collective/changeset/85076
+.. _r85089: http://dev.plone.org/collective/changeset/85089
+.. _r85091: http://dev.plone.org/collective/changeset/85091
+.. _r85119: http://dev.plone.org/collective/changeset/85119
+.. _r85149: http://dev.plone.org/collective/changeset/85149
+.. _r85157: http://dev.plone.org/collective/changeset/85157
+.. _r85196: http://dev.plone.org/collective/changeset/85196
+.. _r85365: http://dev.plone.org/collective/changeset/85365
+.. _r85367: http://dev.plone.org/collective/changeset/85367
+.. _r85392: http://dev.plone.org/collective/changeset/85392
+.. _r85400: http://dev.plone.org/collective/changeset/85400
+.. _r85423: http://dev.plone.org/collective/changeset/85423
+.. _r85424: http://dev.plone.org/collective/changeset/85424
+.. _r85515: http://dev.plone.org/collective/changeset/85515
+.. _r85628: http://dev.plone.org/collective/changeset/85628
+.. _r85667: http://dev.plone.org/collective/changeset/85667
+.. _r85678: http://dev.plone.org/collective/changeset/85678
+.. _r85684: http://dev.plone.org/collective/changeset/85684
+.. _r85687: http://dev.plone.org/collective/changeset/85687
+.. _r85733: http://dev.plone.org/collective/changeset/85733
+.. _r85768: http://dev.plone.org/collective/changeset/85768
+.. _r85823: http://dev.plone.org/collective/changeset/85823
+.. _r85834: http://dev.plone.org/collective/changeset/85834
+.. _r85835: http://dev.plone.org/collective/changeset/85835
+.. _r85959: http://dev.plone.org/collective/changeset/85959
 .. end of autogenerated link list
