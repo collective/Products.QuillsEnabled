@@ -12,11 +12,12 @@ Requires Plone 3.1 or later.
 Getting started
 ---------------
 
-QuillsEnabled allows you to use Plone Folders and Documents for blogging.
-To create a blog, simply add a new Folder and select "Activate Blog" from the
-Actions menu, then add Pages for each new post. Existing folders can be turned
-into a blog the same way. To change a Blog back into a plain and boring folder,
-select "Deactive blog" from the Actions menu.
+QuillsEnabled allows you to use Plone Folders, Documents and News Items for
+blogging. To create a blog, simply add a new Folder and select
+"Activate Blog" from the "Actions" menu, then add Pages/New Items for each
+new post. Existing folders can be turned into a blog the same way. To change
+a Blog back into a plain and boring folder, select "Deactive blog"
+from the Actions menu.
 
 
 Extensions
@@ -24,13 +25,10 @@ Extensions
 
 There are a few packages that add extra functionality to your Blog.
 
-Products.QuillsEnabledRemoteBlogging
+quills.remoteblogging
     Use your Blog with any Weblog Editor that supports the `MetaWeblog API`_.
 
     .. _MetaWeblog API: http://www.metaweblogapi.com/
-
-quills.trackback
-    Add Trackback URLs to your posts.
 
 
 Links
@@ -60,12 +58,4 @@ Code Repository
     `http://svn.plone.org/svn/collective/Products.QuillsEnabled/`__.
 
     __ http://svn.plone.org/svn/collective/Products.QuillsEnabled
-
-
-Credits
-=======
-
-- `Tim Hicks`_
-
-.. _`Tim Hicks`: tim@sitefusion.co.uk
 
