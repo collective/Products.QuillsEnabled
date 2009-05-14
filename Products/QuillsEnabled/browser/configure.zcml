@@ -32,6 +32,11 @@
           name="weblogentry_view"
        />
 
+       <defaultView
+          for="quills.core.interfaces.IPossibleWeblogEntry"
+	  name="weblogentry_view"
+	  layer="quills.app.traversal.IInsideWeblog" />
+
       <page
           for="quills.core.interfaces.IWeblogEnhanced"
           template="browser/manage_comments.pt"

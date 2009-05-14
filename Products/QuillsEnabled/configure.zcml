@@ -20,6 +20,16 @@
       <implements interface="quills.core.interfaces.IPossibleWeblog" />
   </class>
 
+
+  <browser:page
+      name="plone_context_state"
+      for="quills.core.interfaces.IPossibleWeblogEntry"
+      permission="zope2.View"
+      layer="quills.app.traversal.IInsideWeblog"
+      class="quills.app.contextstate.QuillsContextState"
+      allowed_interface="plone.app.layout.globals.interfaces.IContextState"
+      />
+
   <adapter
       for="quills.core.interfaces.enabled.IPossibleWeblogEntry"
       provides="Products.basesyndication.interfaces.IFeedEntry"
