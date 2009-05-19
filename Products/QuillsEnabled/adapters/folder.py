@@ -1,3 +1,12 @@
+""" Blogging support for ATFolders.
+
+TODO:
+
+- need test-cases for workflow-aware publishing, e.g. publish posts with
+  two different workflow states which both are configured for published
+  posts. See if both show up, if the authors of both show up etc.
+"""
+
 # Zope imports
 from zope.interface import implements
 from zope.component.interface import interfaceToName
@@ -92,11 +101,13 @@ class Folder2Weblog(WeblogMixin):
         """See IWeblog.
         """
         catalog, portal = self._setCatalog()
+        weblog_config = IWeblogEnhancedConfiguration(self.context)
         results = catalog(
             object_provides=interfaceToName(portal, IPossibleWeblogEntry),
             path={ 'query' : '/'.join(self.context.getPhysicalPath()),
                    'level' : 0, },
-            review_state='published')
+            review_state={ 'query'    : weblog_config.published_states,
+                           'operator' : 'or'})
         authors = {}
         for brain in results:
             authors[brain.Creator] = None
