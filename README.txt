@@ -1,6 +1,6 @@
-=============
-QuillsEnabled
-=============
+======================
+Products.QuillsEnabled
+======================
 
 Quills is an Enterprise Weblog System for the Plone content management system.
 It is designed from the ground up to work well and provide specialized features
@@ -10,7 +10,7 @@ Requires Plone 3.1 or later.
 
 
 Getting started
----------------
+===============
 
 QuillsEnabled allows you to use Plone Folders, Documents and News Items for
 blogging. To create a blog, simply add a new Folder and select
@@ -21,7 +21,7 @@ from the Actions menu.
 
 
 Extensions
-----------
+==========
 
 There are a few packages that add extra functionality to your Blog.
 
