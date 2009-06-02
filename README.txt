@@ -27,6 +27,8 @@ There are a few packages that add extra functionality to your Blog.
 
 quills.remoteblogging
     Use your Blog with any Weblog Editor that supports the `MetaWeblog API`_.
+    This feature requires the ``Products.MetaWeblogPASPlugin`` product to
+    be installed into your Plone site.
 
     .. _MetaWeblog API: http://www.metaweblogapi.com/
 
