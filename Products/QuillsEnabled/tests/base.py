@@ -41,7 +41,7 @@ class QuillsTestCaseMixin(BrowserMixin):
 
     def createBlog(self, id):
         """Create a weblog instance."""
-        self.portal.invokeFactory('Folder', id=id)
+        self.portal.invokeFactory('Folder', title="Test Weblog", id=id)
         folder = self.portal[id]
         self.portal.portal_workflow.doActionFor(folder, 'publish')
         turnIntoBlog = BlogToggle(folder, self.portal.REQUEST)

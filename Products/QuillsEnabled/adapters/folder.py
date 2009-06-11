@@ -52,7 +52,7 @@ class Folder2Weblog(WeblogMixin):
         return self.context.getId()
 
     def getTitle(self):
-        return self.context.getTitle()
+        return self.context.Title()
 
     def hasEntry(self, id):
         return self.context.hasObject(id)
