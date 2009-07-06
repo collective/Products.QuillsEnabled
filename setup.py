@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.7.0c2'
+version = '1.7.0c2-post1'
 
 setup(name='Products.QuillsEnabled',
       version=version,
