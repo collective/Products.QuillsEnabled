@@ -109,6 +109,14 @@ def test_suite():
     )
 
     suite.addTest(ZopeDocFileSuite(
+        'issue193.txt',
+        package='quills.app.tests',
+        test_class=QuillsFunctionalTestCase,
+        optionflags=optionflags,
+        )
+    )
+
+    suite.addTest(ZopeDocFileSuite(
         'tests.txt',
         package='quills.core.tests',
         test_class=QuillsContributorDocTestCase,
