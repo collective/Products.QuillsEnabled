@@ -33,6 +33,18 @@ quills.remoteblogging
     .. _MetaWeblog API: http://www.metaweblogapi.com/
 
 
+Pitfalls
+========
+
+There is a `slight incompatibility`_ with `Quintagroup's Plone
+Comments`_ product. To fix it, open the ZMI of your Plone site and go
+to the “portal_form_controler”. There select the tab “Actions” and
+delete the overide “discussion_reply_form”.
+
+.. _slight incompatibility: http://groups.google.com/group/plone-quills/browse_thread/thread/c03829a8be2c2db2
+.. _Quintagroup's Plone Comments: http://pypi.python.org/pypi/quintagroup.plonecomments
+
+
 Links
 =====
 
