@@ -61,7 +61,7 @@ Mailing List
     __ plone-quills@googlegroups.com
 
 Issue Tracker
-    Report bug and request features by using the `issue tracker`__ on our
+    Report bugs and request features by using the `issue tracker`__ on our
     product homepage.
 
     __ http://plone.org/products/quills/issues

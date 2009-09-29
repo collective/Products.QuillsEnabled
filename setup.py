@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.7.0c3'
+version = '1.7.0'
 
 setup(name='Products.QuillsEnabled',
       version=version,
@@ -9,7 +9,7 @@ setup(name='Products.QuillsEnabled',
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Framework :: Plone",
         "License :: OSI Approved :: GNU General Public License (GPL)",
         "Programming Language :: Python",
@@ -27,7 +27,7 @@ setup(name='Products.QuillsEnabled',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'quills.app>=1.7.0c1,<=1.7.99',
+          'quills.app>=1.7.0,<=1.7.99',
           'Products.basesyndication',
           'Products.fatsyndication',
       ],
