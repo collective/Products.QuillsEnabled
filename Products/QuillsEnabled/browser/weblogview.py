@@ -1,14 +1,9 @@
 # Zope imports
 from zope.interface import implements
 
-# Plone imports
-#from Products.CMFPlone.PloneBatch import Batch as PloneBatch
-from Products.CMFCore.utils import getToolByName
-
 # Quills imports
 from quills.core.interfaces import IWeblog
 from quills.core.interfaces import IWeblogEntry
-from quills.core.interfaces import IWeblogEnhanced
 from quills.core.browser.interfaces import IWeblogView
 from quills.core.browser.interfaces import IWeblogEntryView
 from quills.core.browser.interfaces import ITopicView
@@ -42,7 +37,6 @@ class WeblogView(BaseWeblogView, BaseView):
 class WeblogEntryView(BaseWeblogEntryView, BaseView):
     """
     """
-
     implements(IWeblogEntryView)
 
     def getWeblog(self):
@@ -66,7 +60,6 @@ class WeblogEntryView(BaseWeblogEntryView, BaseView):
 class TopicView(WeblogView):
     """
     """
-
     implements(ITopicView)
 
     def getLastModified(self):

@@ -4,9 +4,6 @@ from StringIO import StringIO
 # Zope imports
 from transaction import commit
 
-# Plone imports
-from Products.CMFCore.utils import getToolByName
-
 # Quills imports
 from quills.app.setuphandlers import setup_gs_profiles
 
