@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.7.0'
+version = '1.8a1'
 
 setup(name='Products.QuillsEnabled',
       version=version,
@@ -27,11 +27,9 @@ setup(name='Products.QuillsEnabled',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'quills.app>=1.7.0,<=1.7.99',
+          'quills.app>=1.8a1',
           'Products.basesyndication',
           'Products.fatsyndication',
       ],
-      entry_points="""
-      # -*- Entry points: -*-
-      """,
+      entry_points=""" """,
       )
