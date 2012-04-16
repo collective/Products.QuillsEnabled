@@ -8,9 +8,15 @@ for a multi-blog, multi-user environment.
 
 Requires Plone 3.1 or later.
 
-
 Getting started
 ===============
+
+Products.QuillsEnabled is a newer more lightweight and future-proof replacement
+for Products.Quills.
+
+It improves upon Products.Quills by not implementing it's own portal types but
+instead gives you blogging capabilities with Plone's internal content types 
+by marking them with special interfaces.
 
 QuillsEnabled allows you to use Plone Folders, Documents and News Items for
 blogging. To create a blog, simply add a new Folder and select
@@ -31,18 +37,6 @@ quills.remoteblogging
     be installed into your Plone site.
 
     .. _MetaWeblog API: http://www.metaweblogapi.com/
-
-
-Pitfalls
-========
-
-There is a `slight incompatibility`_ with `Quintagroup's Plone
-Comments`_ product. To fix it, open the ZMI of your Plone site and go
-to the “portal_form_controler”. There select the tab “Actions” and
-delete the overide “discussion_reply_form”.
-
-.. _slight incompatibility: http://groups.google.com/group/plone-quills/browse_thread/thread/c03829a8be2c2db2
-.. _Quintagroup's Plone Comments: http://pypi.python.org/pypi/quintagroup.plonecomments
 
 
 Links
@@ -69,7 +63,7 @@ Issue Tracker
 
 Code Repository
     You can find the source code in the Plone Collective Repository at
-    `http://svn.plone.org/svn/collective/Products.QuillsEnabled/`__.
+    `https://github.com/collective/Products.QuillsEnabled/`__.
 
-    __ http://svn.plone.org/svn/collective/Products.QuillsEnabled
+    __ https://github.com/collective/Products.QuillsEnabled
 
