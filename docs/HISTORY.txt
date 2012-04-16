@@ -13,5 +13,5 @@ Changelog
 - Compatibility with Plone 4 [jcbrand]
 - Remove version pinning to old version of quills.app [jcbrand]
 
-For older entries, please see Products.Quills/Products.Quills for a changes.
+For older entries, please see Products.Quills/Products.Quills for changes.
 
